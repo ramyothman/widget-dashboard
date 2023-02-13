@@ -1,0 +1,9 @@
+.container-main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-main > * {
+    flex-grow: 1;
+  }

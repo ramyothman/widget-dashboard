@@ -1,1 +1,37 @@
-<p>widget works!</p>
+<div class="w-full pb-6 mt-4 bg-white border border-gray-400 rounded-lg">
+    <div class="flex p-4 text-gray-800 font-bold text-lg border-b border-gray-200">
+      <div>Zoom</div>
+      <div class="bg-gray-300 mx-1 px-2 rounded" (click)="changeData('day')">1m</div>
+      <div class="bg-gray-300 mx-1 px-2 rounded" (click)="changeData('quarter')">3m</div>
+      <div class="bg-gray-300 mx-1 px-2 rounded" (click)="changeData('year')">6m</div>
+      <div class="bg-gray-300 mx-1 px-2 rounded" (click)="changeData('month')">1y</div>
+      <div class="ml-auto mr-4">
+        <input type="text" matInput class="width-250"
+    ngxDaterangepickerMd
+    [locale]="{applyLabel: 'ok', format: 'DD-MM-YYYY'}"
+    startKey="start"
+    endKey="end"
+    [(ngModel)]="selected"
+    name="daterange"
+    (ngModelChange)="ngModelChange($event)"
+    />
+
+      </div>
+    </div>
+    <div class="p-4" style="height: 400px;">
+        <div style="height: 400px;">
+            <canvas
+            baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [type]="lineChartType"
+            (chartClick)="chartClicked($event)"
+            style="height: 400px; width: 100%;"
+            >
+          </canvas>
+            <!-- <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"  [type]="lineChartType" style="height: 400px; width: 100%;"></canvas> -->
+        </div>
+        
+    </div>
+  </div>

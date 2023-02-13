@@ -1,11 +1,15 @@
+
+import { EssentialsCoreModule } from '@factoryplus/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-import { DashboardLayoutComponent } from '@factoryplus/ui-library';
+import { DashboardLayoutComponent, EssentialsUiLibraryModule } from '@factoryplus/ui-library';
 
 @NgModule({
   imports: [CommonModule,
+    EssentialsCoreModule,
+    EssentialsUiLibraryModule,
     RouterModule.forChild([
       {
         path: '',
